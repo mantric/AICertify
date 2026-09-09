@@ -33,6 +33,7 @@ example-name/
 | [`customer-support-bot/`](customer-support-bot/) | Limited risk | EU AI Act transparency obligations + global baselines |
 | [`healthcare-triage-bot/`](healthcare-triage-bot/) | **High risk** (Annex III) | EU AI Act high-risk + gopal healthcare patient-safety |
 | [`hiring-screening-bot/`](hiring-screening-bot/) | **High risk** (Annex III) | EU AI Act high-risk + fair-lending proxy + global fairness |
+| [`financial-advice-bot/`](financial-advice-bot/) | Limited / boundary-sensitive | EU AI Act + BFS fair-lending/model-risk — education only, not personalised advice |
 
 ### Contributing an example
 

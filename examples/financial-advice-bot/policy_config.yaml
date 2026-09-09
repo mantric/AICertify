@@ -1,0 +1,33 @@
+# Policies this example evaluates against.
+# Paths are relative to aicertify/opa_policies/ (the vendored gopal tree).
+
+frameworks:
+  - id: eu_ai_act
+    path: international/eu_ai_act/v1
+    rationale: |
+      Transparency and human-oversight obligations for an AI system that
+      discusses financial topics with consumers. Personalised advice is out of
+      scope for this bot; the contract must keep that boundary visible.
+
+  - id: fair_lending
+    path: industry_specific/bfs/v1/loan_evaluation
+    rationale: |
+      Fair-lending / model-risk patterns encode protected-attribute neutrality,
+      appeal/complaint routing, and decision-boundary clarity — relevant even
+      when the bot refuses to give personalised advice or credit decisions.
+
+  - id: global
+    path: global/v1
+    rationale: |
+      Fairness, content safety, transparency, and accountability baselines.
+
+evaluators:
+  - Fairness
+  - ContentSafety
+  - RiskManagement
+  - Compliance
+  - Transparency
+
+report:
+  formats: [pdf, markdown, json]
+  output_dir: reports/
