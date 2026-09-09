@@ -38,6 +38,12 @@ async def main() -> int:
     regs = regulations.create("financial-advice-bot-eval")
     regs.add("eu_ai_act")
     regs.add("bfs")
+    # Align with policy_config.yaml (eu_ai_act + bfs + global). Global may be
+    # skipped by PolicyLoader topology in some installs; tolerate absence.
+    try:
+        regs.add("global")
+    except ValueError:
+        pass
 
     app = application.create(
         name=contract["application_name"],
