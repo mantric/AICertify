@@ -1,7 +1,7 @@
 {
-  "contract_id": "financial-advice-bot-2026-09-09",
+  "contract_id": "a1c3e5f7-0911-4b2d-9e8f-21d4f6a8b0c2",
   "application_name": "AcmeFinancialEducationAssistant",
-  "model": {
+  "model_info": {
     "model_name": "gpt-4o",
     "model_version": "2024-08-06",
     "metadata": {
@@ -54,10 +54,22 @@
       "metadata": {"intent": "automation_boundary"}
     }
   ],
-  "metadata": {
+  "context": {
+    "domain": "finance",
+    "risk_documentation": "Education-only chatbot; no personalised advice, credit decisioning, or portfolio construction. Human adviser escalation path documented.",
+    "customer_data": "Chat transcripts retained 12 months for quality/complaints; deletion via privacy@acme.example.",
+    "system": {
+      "high_risk": false,
+      "purpose": "general_financial_education_only",
+      "ai_disclosure": true,
+      "human_oversight": true,
+      "advice_boundary": "education_not_personal_recommendation"
+    }
+  },
+  "compliance_context": {
+    "jurisdiction": "EU+UK",
     "captured_by": "staging-logging-pipeline",
     "captured_at": "2026-09-09T11:00:00Z",
-    "jurisdiction": "EU+UK",
-    "purpose": "EU AI Act + fair-lending/model-risk evaluation for a general financial-education chatbot (not personalised advice)"
+    "purpose": "EU AI Act + BFS fair-lending/model-risk + global evaluation for a general financial-education chatbot (not personalised advice)"
   }
 }

@@ -1,7 +1,6 @@
 # Policies this example evaluates against.
 # Paths are relative to aicertify/opa_policies/ (the vendored gopal tree).
-# Declarative intent for reviewers — `run.py` selects frameworks via
-# `regulations.add(...)` and does not load this file at runtime.
+# `run.py` loads this file and calls `regulations.add(<id>)` for each framework.
 
 frameworks:
   - id: eu_ai_act
@@ -15,8 +14,7 @@ frameworks:
     path: industry_specific/bfs/v1
     rationale: |
       gopal BFS bundle (fair-lending under loan_evaluation/ plus model-risk
-      policies). Matches `regulations.add("bfs")` in run.py — do not rename
-      this id to a narrow subfolder alias.
+      policies). Matches `regulations.add("bfs")`.
 
   - id: global
     path: global/v1
@@ -31,7 +29,5 @@ evaluators:
   - Transparency
 
 report:
-  # Intended formats for adapters that read this file. The documented
-  # `run.py` command currently requests PDF only via Application.evaluate().
   formats: [pdf, markdown, json]
   output_dir: reports/

@@ -16,9 +16,9 @@ institution-owned evidence remain the deployer's responsibility.
 | Aspect | Coverage |
 |---|---|
 | Application | Financial education chatbot (no personalised advice) |
-| Frameworks | EU AI Act + BFS fair-lending/model-risk + global |
+| Frameworks | EU AI Act + BFS fair-lending/model-risk + global (`policy_config.yaml` → `run.py`) |
 | Interactions | 8 captured pairs (facts, refusals, neutrality, complaints, boundaries) |
-| Report format | PDF from `run.py` (`report_format="pdf"`). `policy_config.yaml` lists markdown/json as intended formats for adapters that load it; the documented command does not read that file. |
+| Report format | Formats listed in `policy_config.yaml` (`pdf`, `markdown`, `json`); `run.py` evaluates each |
 
 ## Files
 

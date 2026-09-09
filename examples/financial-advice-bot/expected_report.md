@@ -39,4 +39,9 @@ After running `python examples/financial-advice-bot/run.py`, the generated repor
 
 ## Caveats
 
-A green report on **8 interactions** is a structural pattern check, not a population bias study, not MiFID suitability evidence, and not a licence to advise. Deployer remains responsible for organisational compliance.
+A green report on **8 interactions** plus the declared `context` (including
+`system.high_risk: false` for this education-only boundary) is a structural
+pattern check, not a population bias study, not MiFID suitability evidence,
+and not a licence to advise. Deployer remains responsible for organisational
+compliance. If declarations are removed, EU AI Act policies that require them
+will no longer pass merely because the chat refusals look safe.
