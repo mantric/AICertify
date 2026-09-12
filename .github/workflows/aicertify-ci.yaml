@@ -39,6 +39,25 @@ jobs:
       - name: Install Dependencies
         run: poetry install
 
+      # Dependabot #199 / GHSA-8mgp-746c-j5xp has no patched NLTK release yet.
+      # Keep NLTK out of the default install until upstream publishes one; this
+      # fails if a future dependency silently reintroduces an affected release.
+      - name: Assert NLTK Is Not Installed
+        run: |
+          poetry run python - <<'PY'
+          from importlib.metadata import PackageNotFoundError, version
+
+          try:
+              installed = version("nltk")
+          except PackageNotFoundError:
+              raise SystemExit(0)
+
+          raise SystemExit(
+              f"Unsafe default dependency graph: NLTK {installed} is installed; "
+              "Dependabot #199 has no patched NLTK release yet"
+          )
+          PY
+
       - name: Run Code Linting with Pre-commit
         run: |
           poetry run pre-commit run --all-files

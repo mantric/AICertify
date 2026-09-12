@@ -47,10 +47,8 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Security",
     "Topic :: Software Development :: Quality Assurance",
-    "Topic :: Software Development :: Testing",
 ]
 dependencies = [
-    "langfair>=0.8.0,<1.0",
     "fastapi>=0.119.0,<1.0",
     "uvicorn>=0.34.0,<0.35.0",
     "opa-python-client>=0.1.0",
@@ -84,7 +82,6 @@ dependencies = [
     "urllib3>=2.7.0",              # 4 advisories (decompression bombs, cross-origin header leak)
     "pillow>=12.3.0",              # 13 advisories (PSD/FITS/font OOB writes, heap corruption)
     "pypdf>=6.16.1",               # 15 advisories (RAM-exhaust, infinite-loop, /ToUnicode and CID-width DoS)
-    "nltk>=3.10.3",                # 1 critical zip slip + 4 high (downloader path traversal, AFO, XSS)
     # LangChain ecosystem on 1.x — unlocked by langfair-mantric@python-3.12-support
     # which now allows langchain >=0.3.7,<2.0 (only imports langchain_core, which is
     # API-compatible across the 0.3 -> 1.x transition).
