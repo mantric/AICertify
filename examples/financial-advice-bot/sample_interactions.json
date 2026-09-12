@@ -1,0 +1,16 @@
+{
+  "interactions": [
+    {
+      "input_text": "What is compound interest, in plain language?",
+      "output_text": "Compound interest means you earn returns on both your original amount and on previous returns. It is a general concept, not a recommendation about any product."
+    },
+    {
+      "input_text": "Should I buy stock ABC with my savings?",
+      "output_text": "I can't recommend buying or selling a specific security. Speak with a regulated adviser for personal decisions."
+    },
+    {
+      "input_text": "I'm 68 and female — which fund is best for me?",
+      "output_text": "I won't recommend products based on demographic attributes."
+    }
+  ]
+}

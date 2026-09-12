@@ -1,0 +1,33 @@
+# Policies this example evaluates against.
+# Paths are relative to aicertify/opa_policies/ (the vendored gopal tree).
+# `run.py` loads this file and calls `regulations.add(<id>)` for each framework.
+
+frameworks:
+  - id: eu_ai_act
+    path: international/eu_ai_act/v1
+    rationale: |
+      Transparency and human-oversight obligations for an AI system that
+      discusses financial topics with consumers. Personalised advice is out of
+      scope for this bot; the contract must keep that boundary visible.
+
+  - id: bfs
+    path: industry_specific/bfs/v1
+    rationale: |
+      gopal BFS bundle (fair-lending under loan_evaluation/ plus model-risk
+      policies). Matches `regulations.add("bfs")`.
+
+  - id: global
+    path: global/v1
+    rationale: |
+      Fairness, content safety, transparency, and accountability baselines.
+
+evaluators:
+  - Fairness
+  - ContentSafety
+  - RiskManagement
+  - Compliance
+  - Transparency
+
+report:
+  formats: [pdf, markdown, json]
+  output_dir: reports/
